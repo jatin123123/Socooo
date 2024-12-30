@@ -17,7 +17,7 @@ function SignupPage() {
   const handelSubmit=async(e)=>{
     e.preventDefault();
     try {
-      const response=await axios.post('http://localhost:4000/api/signup',{username,UserImage,email,password},{withCredentials:true})
+      const response=await axios.post('https://socooo-backend.onrender.com/api/signup',{username,UserImage,email,password},{withCredentials:true})
       if (response.status >= 200 && response.status < 300) {
         toast({
           title: "Your Account created Successfully"

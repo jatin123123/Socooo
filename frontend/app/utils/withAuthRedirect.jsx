@@ -10,7 +10,7 @@ export default function withAuthRedirect(Component) {
     useEffect(() => {
       const checkAuth = async () => {
         try {
-          const response = await axios.get("http://localhost:4000/api/auth/me", {
+          const response = await axios.get("https://socooo-backend.onrender.com/api/auth/me", {
             withCredentials: true,
           });
           if (response.data.isAuthenticated) {

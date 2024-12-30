@@ -24,7 +24,7 @@ function Home() {
   const CreatePost=async (e)=>{
     e.preventDefault();
     try {
-      const response=await axios.post("http://localhost:4000/api/create",{tittle,description},{withCredentials:true});
+      const response=await axios.post("https://socooo-backend.onrender.com/api/create",{tittle,description},{withCredentials:true});
       if(response.status==200){
         toast({
           title: "Twite Successfully Posted"
@@ -43,7 +43,7 @@ function Home() {
   const [error, setError] = useState(null);
   const fetchPosts = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/mypost', {
+      const response = await axios.get('https://socooo-backend.onrender.com/api/mypost', {
         withCredentials: true,
       });
       setPostdata(response.data.posts); // Assuming response has a 'posts' array
@@ -52,7 +52,7 @@ function Home() {
       console.error("Error fetching posts:", error);
       if (error.response && error.response.status === 401) {
         alert("Unauthorized. Please log in.");
-        router.push("/login");
+        router.push("/auth/login");
       } else {
         setError("An error occurred while fetching posts.");
       }
@@ -64,7 +64,7 @@ function Home() {
   const [feedData,setfeedData]=useState([]);
   const feed=async()=>{
     try {
-      const responce=await axios.get("http://localhost:4000/api/feed");
+      const responce=await axios.get("https://socooo-backend.onrender.com/api/feed");
       setfeedData(responce.data.feed);
       // console.log();
     } catch (error) {
@@ -74,7 +74,7 @@ function Home() {
   // Delete Post Route.
   const deletePost=async(postId)=>{
       try {
-        const response=await axios.delete(`http://localhost:4000/api/deletepost/${postId} `,{withCredentials:true}); 
+        const response=await axios.delete(`https://socooo-backend.onrender.com/api/deletepost/${postId} `,{withCredentials:true}); 
       setPostdata((prevPosts) => prevPosts.filter((post) => post._id !== postId));
 
         alert("Post Delete Successfully");
@@ -87,7 +87,7 @@ function Home() {
   const [profiledata,setprofile]=useState({});
   const profile=async()=>{
     try {
-      const response=await axios.get("http://localhost:4000/api/adminProfile",{withCredentials:true});
+      const response=await axios.get("https://socooo-backend.onrender.com/api/adminProfile",{withCredentials:true});
       setprofile(response.data.admin);
       // console.log(response.data.admin);
     } catch (error) {

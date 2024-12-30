@@ -17,7 +17,7 @@ function page() {
   const deletePost = async (postId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/api/deletepost/${postId}`,
+        `https://socooo-backend.onrender.com/api/deletepost/${postId}`,
         {
           withCredentials: true,
         }
@@ -42,7 +42,7 @@ function page() {
   const [error, setError] = useState(null);
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/mypost", {
+      const response = await axios.get("https://socooo-backend.onrender.com/api/mypost", {
         withCredentials: true,
       });
       setPostdata(response.data.posts); // Assuming response has a 'posts' array
@@ -62,7 +62,7 @@ function page() {
   const profile = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:4000/api/adminProfile",
+        "https://socooo-backend.onrender.com/api/adminProfile",
         { withCredentials: true }
       );
       setprofile(response.data.admin);
@@ -74,7 +74,7 @@ function page() {
   // logout
   const logout = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/logout", {
+      const response = await axios.get("https://socooo-backend.onrender.com/api/logout", {
         withCredentials: true,
       });
       if (response.status == 200) {

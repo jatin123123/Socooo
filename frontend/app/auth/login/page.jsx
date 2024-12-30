@@ -18,7 +18,7 @@ function SignupPage() {
 
     try {
         const response = await axios.post(
-            'http://localhost:4000/api/login',  // Update this to the correct login endpoint
+            'https://socooo-backend.onrender.com/api/login',  // Update this to the correct login endpoint
             { email, password },
             { withCredentials: true } // This includes credentials (cookies) with the request
         );

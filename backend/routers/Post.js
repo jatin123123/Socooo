@@ -110,69 +110,9 @@ try {
     res.status(500).json({ message: "Internal server error" }); 
 }
 })
-// Follow route
-router.post("/follow/:userId",async(req,res)=>{
 
-    const token = req.cookies.token;
-    const userIdToFollow = req.params.userId;
-  
-    try {
-          // Check if token is missing
-          if (!token) {
-            return res.status(401).json({ message: "Token not found. Please log in." });
-        }
 
-        // Verify token
-        const decoded = jwt.verify(token, "jatin"); 
-        const loggedInUserId = await User.findById(decoded._id);
 
-      const user = await User.findById(userIdToFollow);
-      const loggedInUser = await User.findById(loggedInUserId);
-  
-      if (user.followers.includes(loggedInUserId)) {
-        return res.status(400).json({ message: "You are already following this user." });
-      }
-  
-      user.followers.push(loggedInUserId);
-      loggedInUser.following.push(userIdToFollow);
-  
-      await user.save();
-      await loggedInUser.save();
-  
-      res.json({ message: "Followed user" });
-    } catch (error) {
-      res.status(500).json({ message: "Failed to follow user" });
-    }
-});
 
-// Unfollow route
-router.post("/unfollow/:userId", async (req, res) => {
-    const token = req.cookies.token;
-    const userIdToUnfollow = req.params.userId;
-  
-    try {
-          // Check if token is missing
-          if (!token) {
-            return res.status(401).json({ message: "Token not found. Please log in." });
-        }
-
-        // Verify token
-        const decoded = jwt.verify(token, "jatin"); 
-        const loggedInUserId = await User.findById(decoded._id);
-
-      const user = await User.findById(userIdToUnfollow);
-      const loggedInUser = await User.findById(loggedInUserId);
-  
-      user.followers.pull(loggedInUserId); // Remove from followers
-      loggedInUser.following.pull(userIdToUnfollow); // Remove from following
-  
-      await user.save();
-      await loggedInUser.save();
-  
-      res.json({ message: "Unfollowed user" });
-    } catch (error) {
-      res.status(500).json({ message: "Failed to unfollow user" });
-    }
-  });
 module.exports = router;
  
