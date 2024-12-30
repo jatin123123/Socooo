@@ -47,7 +47,12 @@ router.post("/login", async (req, res) => {
           
         );
 
-        res.cookie("token", token);
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: true, // Always secure
+            sameSite: "strict", // CSRF protection
+            path: "/", // Default path
+        });
 
         return res.status(200).json({ message: "User Logged In Successfully" });
     } catch (error) {
