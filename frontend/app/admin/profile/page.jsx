@@ -10,6 +10,8 @@ import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 
 function page() {
+  const baseurl="http://localhost:4000";
+
   const { toast } = useToast();
 
   const router = useRouter();
@@ -17,7 +19,7 @@ function page() {
   const deletePost = async (postId) => {
     try {
       const response = await axios.delete(
-        `https://socooo-backend.onrender.com/api/deletepost/${postId}`,
+        `${baseurl}/api/deletepost/${postId}`,
         {
           withCredentials: true,
         }
@@ -42,7 +44,7 @@ function page() {
   const [error, setError] = useState(null);
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("https://socooo-backend.onrender.com/api/mypost", {
+      const response = await axios.get(`${baseurl}/api/mypost`, {
         withCredentials: true,
       });
       setPostdata(response.data.posts); // Assuming response has a 'posts' array
@@ -62,7 +64,7 @@ function page() {
   const profile = async () => {
     try {
       const response = await axios.get(
-        "https://socooo-backend.onrender.com/api/adminProfile",
+        `${baseurl}/api/adminProfile`,
         { withCredentials: true }
       );
       setprofile(response.data.admin);
@@ -74,7 +76,7 @@ function page() {
   // logout
   const logout = async () => {
     try {
-      const response = await axios.get("https://socooo-backend.onrender.com/api/logout", {
+      const response = await axios.get(`${baseurl}/api/logout`, {
         withCredentials: true,
       });
       if (response.status == 200) {
@@ -122,7 +124,7 @@ function page() {
           <div className="flex items-center gap-2">
             {" "}
             {profiledata.username ? profiledata.username : "Loading..."}{" "}
-            <span className="animate-bounce  cursor-pointer ">
+            <span className="animate-pulse text-green-700  cursor-pointer ">
               {" "}
               <MdModeEditOutline />
             </span>

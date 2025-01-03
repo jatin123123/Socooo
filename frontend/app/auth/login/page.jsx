@@ -8,6 +8,8 @@ import withAuthRedirect from '@/app/utils/withAuthRedirect';
 import { useToast } from '@/hooks/use-toast';
 
 function SignupPage() {
+  const baseurl="http://localhost:4000";
+
   const { toast } = useToast();
   const [email,setEmail]=useState("");
   const [password,setpassword]=useState("");
@@ -18,7 +20,7 @@ function SignupPage() {
 
     try {
         const response = await axios.post(
-            'https://socooo-backend.onrender.com/api/login',  // Update this to the correct login endpoint
+            `${baseurl}/api/login`,  // Update this to the correct login endpoint
             { email, password },
             { withCredentials: true } // This includes credentials (cookies) with the request
         );

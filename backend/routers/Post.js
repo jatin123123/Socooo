@@ -3,7 +3,7 @@ const User = require('../models/User.Schema');
 const Post = require('../models/Post.Schema'); // Assuming you have a Post schema
 const jwt = require("jsonwebtoken");
 const router = express.Router();
-
+const checkUser=require("../middelwaire/user")
 // Middleware to parse cookies
 const cookieParser = require('cookie-parser');
 router.use(cookieParser());
@@ -63,7 +63,7 @@ router.get("/mypost", async (req, res) => {
         const user = await User.findById(decoded._id);
 
         // Check if user exists
-        if (!user) {
+        if (!user) { 
             return res.status(404).json({ message: "User not found." });
         }
 
