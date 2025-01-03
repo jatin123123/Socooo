@@ -2,10 +2,23 @@ const express=require("express")
 const app=express();
 const dotenv=require("dotenv");
 const cors=require("cors")
+const allowedOrigins = [
+  'https://socooo-jatin123123s-projects.vercel.app',
+  'https://another-frontend-domain.com',
+  'http://localhost:3000', // Local development environment
+];
 app.use(cors({
-    origin: 'https://socooo-jatin123123s-projects.vercel.app', // The frontend URL
-    credentials: true,               // Allow credentials (cookies, tokens)
- } ));
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      // Allow requests with no origin (e.g., mobile apps, Postman)
+      callback(null, true);
+    } else {
+      // Reject requests from untrusted origins
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,  // Allow cookies/tokens to be sent with the request
+}));
 dotenv.config();
 
 const db=require("./config/db");
