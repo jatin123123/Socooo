@@ -3,7 +3,7 @@ const app=express();
 const dotenv=require("dotenv");
 const cors=require("cors")
 app.use(cors({
-    origin: 'http://localhost:3000', // The frontend URL
+    origin: 'https://socooo-jatin123123s-projects.vercel.app', // The frontend URL
     credentials: true,               // Allow credentials (cookies, tokens)
  } ));
 dotenv.config();
