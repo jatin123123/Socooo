@@ -8,7 +8,7 @@ import withAuthRedirect from '@/app/utils/withAuthRedirect';
 import { useToast } from '@/hooks/use-toast';
 
 function SignupPage() {
-  const baseurl="http://localhost:4000";
+  const baseurl="https://socooo.onrender.com";
 
   const { toast } = useToast();
   const [email,setEmail]=useState("");
