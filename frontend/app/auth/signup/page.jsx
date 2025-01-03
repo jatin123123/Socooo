@@ -8,7 +8,7 @@ import withAuthRedirect from '@/app/utils/withAuthRedirect'
 import { useToast } from '@/hooks/use-toast'
 import Link from 'next/link'
 function SignupPage() {
-  const baseurl="http://localhost:4000";
+  const baseurl="https://socooo.onrender.com";
   const { toast } = useToast();
   const [UserImage,setUserImage]=useState('')
   const [username,setUserName]=useState("");
