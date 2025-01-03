@@ -49,7 +49,7 @@ router.post("/login", async (req, res) => {
 
       res.cookie("token", token, {
   httpOnly: true,
-  sameSite: 'none', // Adjust based on your needs
+  sameSite: 'None', // Adjust based on your needs
   path: '/',
 });
 
