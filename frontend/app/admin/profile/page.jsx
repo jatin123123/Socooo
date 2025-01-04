@@ -52,7 +52,7 @@ function page() {
       console.error("Error fetching posts:", error);
       if (error.response && error.response.status === 401) {
         alert("Unauthorized. Please log in.");
-        router.push("/login");
+        router.push("/auth/login");
       } else {
         setError("An error occurred while fetching posts.");
       }

@@ -15,10 +15,12 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 function Home() {
   const baseurl="https://socooo.onrender.com";
  const { toast } = useToast();
+ const router=useRouter();
   // Create twite 
   const [tittle,setTittle]=useState("");
   const [description,setdiscription]=useState("");

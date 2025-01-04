@@ -15,7 +15,7 @@ password:{
 },
 UserImage:{
     type:String,
-    required:true,
+    default:"https://beforeigosolutions.com/wp-content/uploads/2021/12/dummy-profile-pic-300x300-1.png"
 },
 post:[{
     type:Schema.Types.ObjectId,

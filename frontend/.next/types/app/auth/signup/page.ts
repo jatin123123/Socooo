@@ -1,4 +1,4 @@
-// File: /workspaces/Socooo/frontend/app/auth/signup/page.jsx
+// File: C:\Users\vishu\OneDrive\Desktop\Socooo\frontend\app\auth\signup\page.jsx
 import * as entry from '../../../../../app/auth/signup/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
