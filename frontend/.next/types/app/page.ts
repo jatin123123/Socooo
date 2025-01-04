@@ -1,4 +1,4 @@
-// File: D:\Development\development\06\frontend\app\page.jsx
+// File: /workspaces/Socooo/frontend/app/page.jsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

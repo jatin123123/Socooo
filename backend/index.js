@@ -6,7 +6,8 @@ const allowedOrigins = [
   'https://socooo-jatin123123s-projects.vercel.app',
   'https://another-frontend-domain.com',
   'http://localhost:3000',
-  'https://socooo.vercel.app/'// Local development environment
+  'https://socooo.vercel.app/',
+  'https://laughing-potato-jj546qrx7q542ppxj-3000.app.github.dev/'
 ];
 app.use(cors({
   origin: (origin, callback) => {
