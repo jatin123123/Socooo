@@ -4,7 +4,7 @@ const dotenv=require("dotenv");
 const cors=require("cors")
 const allowedOrigins = [
   'https://socooo-jatin123123s-projects.vercel.app',
-  'https://another-frontend-domain.com',
+  'https://laughing-potato-jj546qrx7q542ppxj-3000.app.github.dev'',
   'http://localhost:3000',
   'https://socooo.vercel.app/',
   'https://laughing-potato-jj546qrx7q542ppxj-3000.app.github.dev/'
