@@ -117,7 +117,7 @@ function page() {
       >
         <img
           className="w-40 h-40 rounded-full object-cover object-right-top bg-fuchsia-200"
-          src={profiledata.UserImage}
+          src={profiledata.UserImage||"https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png"}
           alt=""
         />
         <div className="flex flex-col  items-center">
