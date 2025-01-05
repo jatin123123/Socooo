@@ -184,7 +184,7 @@ function Home() {
             </div>
             <HoverCard>
             <HoverCardTrigger asChild>
-              <img className='min-w-5 max-w-5 h-5  object-right-top object-cover bg-green-500 rounded-full' src={feed.author.UserImage||"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fG1vZGVsfGVufDB8fDB8fHww"} alt="" />         
+              <img className='min-w-5 max-w-5 h-5  object-right-top object-cover  rounded-full' src={feed.author.UserImage||"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fG1vZGVsfGVufDB8fDB8fHww"} alt="" />         
               </HoverCardTrigger> 
                 <HoverCardContent className="w-fit h-fit shadow-2xl animate-pulse">
               <h1 className='font-mono text-center'>{feed.author.username}</h1>
