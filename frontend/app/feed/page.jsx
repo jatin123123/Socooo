@@ -225,9 +225,9 @@ function Home() {
       </div>
       </ScrollArea>
     </div>
-    <div className='w-full flex items-center justify-center font-mono opacity-50 h-32 ' id="bottom">
+{/*     <div className='w-full flex items-center justify-center font-mono opacity-50 h-32 ' id="bottom">
     @JatinJangid
-    </div>
+    </div> */}
       </div>
     
       </div>
