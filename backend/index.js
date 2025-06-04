@@ -3,9 +3,11 @@ const app=express();
 const dotenv=require("dotenv");
 const cors=require("cors")
 const allowedOrigins = [
+  'https://socooo.vercel.app/auth/signup',
+  'https://socooo.vercel.app'
   'https://socooo-jatin123123s-projects.vercel.app',
   'http://localhost:3000',
-  'https://socooo.vercel.app/',
+  'https://socooo.vercel.app'
 ];
 app.use(cors({
   origin: (origin, callback) => {
